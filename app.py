@@ -10,7 +10,7 @@ app = Flask(__name__)
 def inicio():
     return "Funciona"
 
-@app.route("/log/tiempo=<ti>, temperatura=<te>, humedad=<h>")
+@app.route("/log/<ti>/<te>/<h>")
 def index(ti, te, h):
     archivo = open("09052019.csv", "a")
     archivo.write(str(ti)+","+str(te)+","+str(h));
